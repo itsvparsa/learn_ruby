@@ -1,6 +1,6 @@
 class Gadgets
 
-  attr_accessor :username
+  attr_accessor :username, :password
   attr_reader :production_num
   # attr_writer :password
 
@@ -17,6 +17,10 @@ class Gadgets
      & object id #{self.object_id}"
   end
 
+  def password=(new_password)
+    @password = new_password if validate_password(new_password)
+  end
+
   private
 
   def generate_production_number
@@ -26,6 +30,10 @@ class Gadgets
     middle_digits = "2017"
     5.times { middle_digits << alphabets.sample}
     "#{start_digits}-#{middle_digits}-#{end_digits}"
+  end
+
+  def validate_password(new_password)
+    new_password.is_a?(String) && new_password.length >= 6 && new_password =~ /\d/
   end
   # def username
   #   @username # instance variables cannot be called out side of class unless they are created as instance methods.
@@ -60,3 +68,11 @@ p phone.username
 p phone.production_num
 phone.username=("ruby_user")
 p phone.username
+
+p phone.password
+
+phone.password=("Somethingelse")
+p phone.password # still outputs "password1"
+
+phone.password=("computer123")
+p phone.password
