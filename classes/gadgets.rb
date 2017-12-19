@@ -12,9 +12,9 @@ class Gadgets
 
   # self keyword referensing to whenverer instance methods created for Gadgets objects eg., info method
   def info
-    "Username is #{@username} & production number is #{@production_num}
+    "Username is #{username} & production number is #{production_num}
      & and it has maded from #{self.class}
-     & object id #{self.object_id}"
+     & object id #{object_id}"
   end
 
   def password=(new_password)
