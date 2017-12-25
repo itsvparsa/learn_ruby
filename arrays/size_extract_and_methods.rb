@@ -51,5 +51,12 @@ p cities
 cities.insert(3, "holborn", "waterloo")
 p cities
 
+# pop - removes last char and returs an array
+nums = [1,2,4,5,6,7,8]
+p nums.pop # 8
+last_three = nums.pop(3) # - removes last three chars
+p last_three # [5, 6, 7]
+
+
 
 
