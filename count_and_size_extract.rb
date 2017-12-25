@@ -1,8 +1,9 @@
 string = "Once upon a time there was a king"
 # extract
-p string.size
-p string[0..5]
-p string[12]
+p string.size # 33
+p string.count("a") # 3
+p string[0..5] # once u
+p string[12] # t
 p string[0...5] # not included last character
 p string[-1] # last character
 p string[100] # nil, when there no enough character
