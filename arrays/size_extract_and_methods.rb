@@ -38,6 +38,18 @@ p [].empty? # t
 p numbers.nil? # f
 p [nil].nil? # f
 
+# push
+cities = ["london", "hyd"]
+cities.push("mandapally")
+p cities
+
+# shovel operater
+cities << "fincheley"
+p cities
+
+# insert - flexible can adds multiple items
+cities.insert(3, "holborn", "waterloo")
+p cities
 
 
 
