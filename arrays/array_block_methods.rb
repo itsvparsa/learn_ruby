@@ -87,3 +87,89 @@ end
 
 p cubes(c_numbers) # [27, 512, 1331, 5832, 704969]
 
+# next
+mix_array = [1, 2, 3, 5, nil, true, "Vijay", [], 3.00]
+sum = 0
+mix_array.each do |num|
+  if num.is_a?(Integer)
+    res = num + (num - num)
+    sum += res
+  end
+end
+
+p sum
+
+mix_array.each do |num|
+  unless num.is_a?(Integer)
+    next
+  else
+    puts "the square of #{num} is #{num ** 2}"
+  end
+end
+
+# reverse
+queue = [1,2,3,4,5,6]
+p queue
+queue.reverse!
+p queue # [6, 5, 4, 3, 2, 1]
+
+# sort
+names = ["kangaroo", "Zebra", "apple"]
+p names.sort # ["Zebra", "apple", "kangaroo"]
+down_c = names.map { |n| n.downcase}
+p down_c.sort # ["apple", "kangaroo", "zebra"]
+
+# concat
+def custom_concat(arr1, arr2)
+  result = arr1 + arr2
+  return result
+end
+
+p custom_concat([1,2], [3,4])
+
+# max & min
+number_m_m = [12, 34, 34, 23454, 467, 34, 23, 9]
+
+def custom_max(array)
+  array.sort[-1]
+end
+
+def custom_maxx(array)
+  return nil if array.empty?
+  max = array[0]
+  array.each do |value|
+    if value > max
+      max = value
+    end
+   end
+  max
+end
+
+def custom_min(array)
+  array.sort[0]
+end
+
+p custom_maxx(number_m_m)
+p custom_min(number_m_m)
+
+# include?
+arr = [1, 2, 5, 6, 99, "blue"]
+p arr.include?(100) # f
+p arr.include?(99) # t
+
+# index & find_index
+p arr.index(99) # 4
+p arr.find_index("blue") # 5
+
+# select
+grades = [43, 54, 87, 88, 99]
+evens = grades.select do |number|
+  number.even? # this always returns a boolean but when print it it returns new array
+end
+
+p evens # [54, 88]
+
+words = ["level", "selfles", "racecar", "tiger"]
+polyndroms = words.select { |word| word == word.reverse}
+p polyndroms # ["level", "selfles", "racecar"]
+
