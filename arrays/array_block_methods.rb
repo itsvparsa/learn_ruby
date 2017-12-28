@@ -173,3 +173,7 @@ words = ["level", "selfles", "racecar", "tiger"]
 polyndroms = words.select { |word| word == word.reverse}
 p polyndroms # ["level", "selfles", "racecar"]
 
+# reject
+animals = ["cheetah", "cat", "tiger"]
+results = animals.reject { |animal| animal.include?("c")}
+p results
