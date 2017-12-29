@@ -33,3 +33,26 @@ capitals.each do |guess|
   p guess # [:telangana, "hyd"] [:andhra, "vizag"] - new array
 end
 
+# each_key
+capitals.each_key do |state|
+  p state
+end
+
+# each_value
+capitals.each_value do |capital|
+  p capital
+end
+
+def custom_key(hash)
+  keys = []
+  hash.each { |k, v| keys << k}
+  keys # [:telangana, :andhra]
+end
+
+p custom_key(capitals)
+
+# keys
+p capitals.keys # returns in array
+
+# values
+p capitals.values # returns in array
