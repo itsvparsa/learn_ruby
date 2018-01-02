@@ -3,7 +3,7 @@
 sentence = "Once upon a time in a land far far away"
 
 def word_count(string)
-  every_word = string.split
+  every_word = string.split(" ")
   count = Hash.new(0)
   every_word.each { |word| count[word] += 1 }
   count
