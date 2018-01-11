@@ -94,21 +94,16 @@ end
 
 p custom_union(a, b) # [1, 2, 3, 4, 5]
 
+# &  - return a common element
+p [1,2,3] & [1,2] & [1,3,4] # [1]
 
+a1 = [1,2,3,4,4]
+b1 = [2,3,4,5,5]
 
+def custom_common(a1, a2)
+  result = []
+  a1.uniq.each { |elem| result << elem if a2.include?(elem) }
+  result
+end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+p custom_common(a1, b1) # [2, 3, 4]
